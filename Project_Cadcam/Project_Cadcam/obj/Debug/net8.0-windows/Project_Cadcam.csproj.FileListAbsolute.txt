@@ -1,0 +1,16 @@
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\bin\Debug\net8.0-windows\Project_Cadcam.exe
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\bin\Debug\net8.0-windows\Project_Cadcam.deps.json
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\bin\Debug\net8.0-windows\Project_Cadcam.runtimeconfig.json
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\bin\Debug\net8.0-windows\Project_Cadcam.dll
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\bin\Debug\net8.0-windows\Project_Cadcam.pdb
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.Function_Cadcam.resources
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.csproj.GenerateResource.cache
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.GeneratedMSBuildEditorConfig.editorconfig
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.AssemblyInfoInputs.cache
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.AssemblyInfo.cs
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.csproj.CoreCompileInputs.cache
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.dll
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\refint\Project_Cadcam.dll
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.pdb
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\Project_Cadcam.genruntimeconfig.cache
+D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Cadcam\Project_Cadcam\obj\Debug\net8.0-windows\ref\Project_Cadcam.dll
