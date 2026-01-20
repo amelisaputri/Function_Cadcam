@@ -17,3 +17,22 @@ D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Class\Project_Class\Project
 D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.genruntimeconfig.cache
 D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\ref\Project_Class.dll
 D:\CADCAM AMEL\PROGRAM CADCAM\Project_cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.UserControl1.resources
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\bin\Debug\net8.0-windows\Project_Class.exe
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\bin\Debug\net8.0-windows\Project_Class.deps.json
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\bin\Debug\net8.0-windows\Project_Class.runtimeconfig.json
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\bin\Debug\net8.0-windows\Project_Class.dll
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\bin\Debug\net8.0-windows\Project_Class.pdb
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.Project_Class.resources
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.UC_ExcelRow.resources
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.UserControl1.resources
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.csproj.GenerateResource.cache
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.AssemblyInfoInputs.cache
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.AssemblyInfo.cs
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.csproj.CoreCompileInputs.cache
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.sourcelink.json
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.dll
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\refint\Project_Class.dll
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.pdb
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\Project_Class.genruntimeconfig.cache
+D:\Data Pribadi\Project\Function_Cadcam\Project_Class\Project_Class\Project_Class\obj\Debug\net8.0-windows\ref\Project_Class.dll

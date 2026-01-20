@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\cadcam.amelisa\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\cadcam.amelisa\\.nuget\\packages",
+      "C:\\Users\\fikri\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\fikri\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
