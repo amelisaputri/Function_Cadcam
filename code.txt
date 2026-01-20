@@ -1,0 +1,224 @@
+using System.Globalization;
+
+namespace Project_Cadcam
+{
+    public partial class Function_Cadcam : Form
+    {
+        public Function_Cadcam()
+        {
+            InitializeComponent();
+
+
+            // Format DateTimePicker
+            SetDateFormat();
+            // EVENT: ketika Data atas berubah
+            textBoxData1.TextChanged += textBoxData1_TextChanged;
+            // Data 2
+            textData2.TextChanged += textBoxData2_TextChanged;
+        }
+
+        // ==========================
+        // PARSE DATA KE FORM
+        // ==========================
+        private void textBoxData1_TextChanged(object sender, EventArgs e)
+        {
+            ParseDataToForm(textBoxData1.Text.Trim());
+        }
+
+        private void textBoxData2_TextChanged(object sender, EventArgs e)
+        {
+            ParseData2ToForm(textData2.Text.Trim());
+        }
+
+
+        //Change Date 
+        private void SetDateFormat()
+        {
+            dtpPlan.Format = DateTimePickerFormat.Custom;
+            dtpPlan.CustomFormat = "yyyy-MM-dd";
+
+            dtpPlan2.Format = DateTimePickerFormat.Custom;
+            dtpPlan2.CustomFormat = "yyyy-MM-dd";
+
+            dtpStart.Format = DateTimePickerFormat.Custom;
+            dtpStart.CustomFormat = "yyyy-MM-dd";
+
+            dtpStart2.Format = DateTimePickerFormat.Custom;
+            dtpStart2.CustomFormat = "yyyy-MM-dd";
+
+            dtpEnd.Format = DateTimePickerFormat.Custom;
+            dtpEnd.CustomFormat = "yyyy-MM-dd";
+
+            dtpEnd2.Format = DateTimePickerFormat.Custom;
+            dtpEnd2.CustomFormat = "yyyy-MM-dd";
+        }
+
+        //Untuk data 1
+        private void ParseDataToForm(string rawData)
+        {
+            if (string.IsNullOrEmpty(rawData))
+                return;
+
+            string[] parts = rawData.Split('&');
+
+            // Minimal harus ada 4 data
+            if (parts.Length < 4)
+                return;
+
+            // ==================
+            // STATUS
+            // ==================
+            if (int.TryParse(parts[0], out int status))
+            {
+                textStatus1.Text = status.ToString();
+            }
+
+            // ==================
+            // TANGGAL
+            // ==================
+            DateTime plan, start, end;
+
+            if (TryParseDate(parts[1], out plan))
+                dtpPlan.Value = plan;
+
+            if (TryParseDate(parts[2], out start))
+                dtpStart.Value = start;
+
+            if (TryParseDate(parts[3], out end))
+                dtpEnd.Value = end;
+        }
+
+        //Untuk Data 2
+        private void ParseData2ToForm(string rawData)
+        {
+            if (string.IsNullOrWhiteSpace(rawData))
+                return;
+
+            string[] parts = rawData.Split('&');
+
+            // Minimal 6 bagian
+            if (parts.Length < 6)
+                return;
+
+            // ==================
+            // STATUS
+            // ==================
+            if (int.TryParse(parts[0], out int status))
+                textStatus2.Text = status.ToString();
+
+            // ==================
+            // TANGGAL
+            // ==================
+            if (TryParseDate(parts[1], out DateTime plan))
+                dtpPlan2.Value = plan;
+
+            if (TryParseDate(parts[2], out DateTime start))
+                dtpStart2.Value = start;
+
+            if (TryParseDate(parts[3], out DateTime end))
+                dtpEnd2.Value = end;
+
+            // ==================
+            // PART & SIZE
+            // ==================
+            textPart.Text = parts[4];
+            //textSize.Text = parts[5];
+            //textSizeX.Text = parts[5].Replace("X", " ");
+            ParseSizeToXYZ(parts[5]);
+        }
+
+        private void ParseSizeToXYZ(string sizeRaw)
+        {
+            if (string.IsNullOrWhiteSpace(sizeRaw))
+                return;
+
+            var numbers = sizeRaw
+                .Split('X')
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .ToArray();
+
+            if (numbers.Length < 3)
+                return;
+
+            textSizeX.Text = numbers[0] + " X";
+            textSizeY.Text = numbers[1] + " Y";
+            textSizeZ.Text = numbers[2] + " Z";
+        }
+
+
+
+        // ==========================
+        // HELPER PARSE TANGGAL
+        // ==========================
+        private bool TryParseDate(string value, out DateTime date)
+        {
+            return DateTime.TryParseExact(
+                value,
+                "yyyyMMdd",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out date
+            );
+        }
+
+        private void Btn_Submit_Click(object sender, EventArgs e)
+        {
+            GenerateData1();
+            GenerateData2();
+        }
+
+        //Untuk edit data 1
+        private void GenerateData1()
+        {
+            if (!int.TryParse(textStatus1.Text.Trim(), out int status))
+                return;
+
+            string data1 = string.Format(
+                "{0}&{1}&{2}&{3}",
+                status,
+                dtpPlan.Value.ToString("yyyyMMdd"),
+                dtpStart.Value.ToString("yyyyMMdd"),
+                dtpEnd.Value.ToString("yyyyMMdd")
+            );
+
+            textBoxData1.Text = data1;
+        }
+
+        //Untuk edit data 2
+        private void GenerateData2()
+        {
+            if (!int.TryParse(textStatus2.Text.Trim(), out int status))
+                return;
+
+            string sizeX = CleanNumber(textSizeX.Text);
+            string sizeY = CleanNumber(textSizeY.Text);
+            string sizeZ = CleanNumber(textSizeZ.Text);
+
+            string sizeRaw = $"{sizeX}X{sizeY}X{sizeZ}";
+
+            string data2 = string.Format(
+                "{0}&{1}&{2}&{3}&{4}&{5}",
+                status,
+                dtpPlan2.Value.ToString("yyyyMMdd"),
+                dtpStart2.Value.ToString("yyyyMMdd"),
+                dtpEnd2.Value.ToString("yyyyMMdd"),
+                textPart.Text.Trim(),
+                sizeRaw
+            );
+
+            textData2.Text = data2;
+        }
+
+        private string CleanNumber(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "000";
+
+            string digits = new string(input.Where(char.IsDigit).ToArray());
+
+            // Optional: pastikan 3 digit
+            return digits.PadLeft(3, '0');
+        }
+
+    }
+}
