@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\project_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\project_class\\project_class\\project_class\\project_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\project_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\project_class\\project_class\\project_class\\uc_header_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\uc_header_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\project_class\\project_class\\project_class\\uc_header_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\uc_header_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\project_class\\uc_excelrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\uc_excelrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\project_class\\project_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EC044493-05D7-48DE-BEA1-A6DDDC047D4A}|Project_Class\\Project_Class.csproj|solutionrelative:project_class\\project_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,7 +40,7 @@
               "RelativeDocumentMoniker": "Project_Class\\Project_Class.cs",
               "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\Project_Class.cs",
               "RelativeToolTip": "Project_Class\\Project_Class.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBIAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T02:27:47.047Z",
               "IsPinned": true,
@@ -41,6 +49,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UC_Header_CADCAM.cs",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_Header_CADCAM.cs",
+              "RelativeDocumentMoniker": "Project_Class\\UC_Header_CADCAM.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_Header_CADCAM.cs*",
+              "RelativeToolTip": "Project_Class\\UC_Header_CADCAM.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T09:04:31.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_Header_CADCAM.cs [Design]",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_Header_CADCAM.cs",
+              "RelativeDocumentMoniker": "Project_Class\\UC_Header_CADCAM.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_Header_CADCAM.cs [Design]*",
+              "RelativeToolTip": "Project_Class\\UC_Header_CADCAM.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T09:04:28.86Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Project_Class.cs [Design]",
               "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\Project_Class.cs",
               "RelativeDocumentMoniker": "Project_Class\\Project_Class.cs",
@@ -52,14 +85,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UC_ExcelRow.cs [Design]",
               "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_ExcelRow.cs",
               "RelativeDocumentMoniker": "Project_Class\\UC_ExcelRow.cs",
               "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Project_Class\\Project_Class\\Project_Class\\UC_ExcelRow.cs [Design]",
               "RelativeToolTip": "Project_Class\\UC_ExcelRow.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T03:03:50.14Z"
+              "WhenOpened": "2026-01-21T03:03:50.14Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
