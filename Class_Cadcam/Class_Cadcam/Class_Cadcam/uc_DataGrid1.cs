@@ -51,7 +51,6 @@ namespace Class_Cadcam
                 dataGridView1.Columns[i].Visible = i < totalColumn;
         }
 
-        // (OPSIONAL) kalau mau diakses langsung
-        public DataGridView Grid => dataGridView1;
+       
     }
 }
