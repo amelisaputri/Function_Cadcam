@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Class
 {
-    public partial class UserControl1 : UserControl
+    public partial class UC_Header_CADCAM : UserControl
     {
-        public UserControl1()
+        public UC_Header_CADCAM()
         {
             InitializeComponent();
         }

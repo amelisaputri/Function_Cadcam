@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\class_cadcam\\class_cadcam\\class_cadcam\\class_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|solutionrelative:class_cadcam\\class_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\class_cadcam\\class_cadcam\\class_cadcam\\uc_datagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|solutionrelative:class_cadcam\\uc_datagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\class_cadcam\\class_cadcam\\class_cadcam\\class_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|solutionrelative:class_cadcam\\class_cadcam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|d:\\cadcam amel\\program cadcam\\function_cadcam\\class_cadcam\\class_cadcam\\class_cadcam\\uc_datagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C82C94C8-8B28-437F-9E56-F03DCE92BED0}|Class_Cadcam\\Class_Cadcam.csproj|solutionrelative:class_cadcam\\uc_datagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class_Cadcam.cs [Design]",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam.cs",
+              "RelativeDocumentMoniker": "Class_Cadcam\\Class_Cadcam.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam.cs [Design]*",
+              "RelativeToolTip": "Class_Cadcam\\Class_Cadcam.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T04:39:29.241Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class_Cadcam.cs",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam.cs",
+              "RelativeDocumentMoniker": "Class_Cadcam\\Class_Cadcam.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam.cs*",
+              "RelativeToolTip": "Class_Cadcam\\Class_Cadcam.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T04:41:48.71Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UC_DataGrid.cs [Design]",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\UC_DataGrid.cs",
+              "RelativeDocumentMoniker": "Class_Cadcam\\UC_DataGrid.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\UC_DataGrid.cs [Design]",
+              "RelativeToolTip": "Class_Cadcam\\UC_DataGrid.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:47:17.341Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UC_DataGrid.cs",
+              "DocumentMoniker": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\UC_DataGrid.cs",
+              "RelativeDocumentMoniker": "Class_Cadcam\\UC_DataGrid.cs",
+              "ToolTip": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\UC_DataGrid.cs",
+              "RelativeToolTip": "Class_Cadcam\\UC_DataGrid.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAUwA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T04:08:25.91Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

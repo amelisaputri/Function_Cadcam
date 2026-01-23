@@ -9,100 +9,31 @@ namespace Project_Class
             InitializeComponent();
         }
 
-        Label lblCadCam;
-
         private void Project_Class_Load(object sender, EventArgs e)
         {
-            FormatGrid(dgv1);
-            CreateLabel();
-            SyncBandWidth();
+            LoadHeaderToFirstColumn();
         }
 
-        private void FormatGrid(DataGridView dgv)
+        private void LoadHeaderToFirstColumn()
         {
-            if (dgv == null) return;
+            // Buat instance usercontrol
+            UC_Header_CADCAM header = new UC_Header_CADCAM();
 
-            // Header center
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.Font, FontStyle.Bold);
+            // Biar penuh di kolom
+            header.Anchor = AnchorStyles.Top | AnchorStyles.Right| AnchorStyles.Left;
 
-            // Auto size by HEADER (bukan isi)
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            // (opsional) hapus margin agar rapih
+            header.Margin = new Padding(0);
 
-            // === INI KUNCINYA ===
-            dgv.ScrollBars = ScrollBars.Both;
-
-            // Biar horizontal scroll muncul
-            dgv.Dock = DockStyle.Fill;   // atau NONE, asal jangan AutoSize
-
-            // Disable auto resize yang bikin kolom dipaksa muat layar
-            dgv.AutoSize = false;
-
-            // Cosmetic
-            //dgv.RowHeadersVisible = false;
-            //dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void CreateLabel()
-        {
-            lblCadCam = new Label()
-            {
-                Text = "CAD / CAM",
-                Height = 32,
-                TextAlign = ContentAlignment.MiddleCenter,
-                BorderStyle = BorderStyle.FixedSingle,
-                BackColor = Color.LightGray,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold)
-            };
-
-            panelBandHeader.Controls.Add(lblCadCam);
+            // Pastikan TableLayoutPanel kosong di cell tersebut
+            //tlp_Main.Controls.Clear();
+ 
+            // Tambahkan ke:
+            // Column = 0
+            // Row    = 1  (baris konten, bukan header atas)
+            tlp_Main.Controls.Add(header, 0, 1);
         }
 
 
-
-        private void SyncBandWidth()
-        {
-            if (lblCadCam == null) return;
-            if (dgv1.Columns.Count == 0) return;
-
-            int totalWidth = 0;
-            int startX = int.MaxValue;
-
-            foreach (DataGridViewColumn col in dgv1.Columns)
-            {
-                if (!col.Visible) continue;
-
-                totalWidth += col.Width;
-
-                Rectangle rect = dgv1.GetColumnDisplayRectangle(col.Index, true);
-                if (rect.X < startX)
-                    startX = rect.X;
-            }
-
-            if (startX == int.MaxValue)
-                startX = 0;
-
-            lblCadCam.Left = startX;
-            lblCadCam.Width = totalWidth;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv1_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
-            {
-                panelBandHeader.Left = -dgv1.HorizontalScrollingOffset;
-            }
-        }
-
-        private void dgv1_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {
-            SyncBandWidth();
-        }
     }
 }
