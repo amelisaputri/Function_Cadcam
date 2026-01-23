@@ -1,4 +1,4 @@
-namespace Class_Cadcam
+﻿namespace Class_Cadcam
 {
     public partial class Program_Cadcam : Form
     {
@@ -6,15 +6,31 @@ namespace Class_Cadcam
         {
             InitializeComponent();
         }
-
+        private uc_DataGrid1 dataGrid;   // ✅ FIELD
         private void Class_Cadcam_Load(object sender, EventArgs e)
         {
+            LoadHeaderToFirstColumn();
+        }
+        private void LoadHeaderToFirstColumn()
+        {
+            // Buat instance usercontrol
+            uc_DataGrid1 dataGrid = new uc_DataGrid1();
 
+            // Biar penuh di kolom
+            dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
+
+            // (opsional) hapus margin agar rapih
+            dataGrid.Margin = new Padding(0);
+
+            // Tambahkan ke:
+            // Column = 0
+            // Row    = 1  (baris konten, bukan header atas)
+            tlp_DataGrid.Controls.Add(dataGrid, 0, 2);
         }
 
-        // ===============================
-        // ENTER DI ROW
-        // ===============================
+        //// ===============================
+        //// ENTER DI ROW
+        //// ===============================
         private void txtRow_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -26,8 +42,8 @@ namespace Class_Cadcam
                     return;
                 }
 
-                uc_DataGrid1.SetRow(row);
-                uc_DataGrid1.SetColumn(GetColumnValue());
+                dataGrid.SetRow(row);
+                dataGrid.SetColumn(GetColumnValue());
 
                 e.SuppressKeyPress = true;
             }
@@ -46,8 +62,8 @@ namespace Class_Cadcam
                     return;
                 }
 
-                uc_DataGrid1.SetColumn(col);
-                uc_DataGrid1.SetRow(GetRowValue());
+                dataGrid.SetColumn(col);
+                dataGrid.SetRow(GetRowValue());
 
                 e.SuppressKeyPress = true;
             }
@@ -59,8 +75,8 @@ namespace Class_Cadcam
         private int GetColumnValue()
         {
             return int.TryParse(textSumCol.Text, out int c)
-                ? Math.Min(c, uc_DataGrid1.MaxColumn)
-                : uc_DataGrid1.MaxColumn;
+                ? Math.Min(c, dataGrid.MaxColumn)
+                : dataGrid.MaxColumn;
         }
 
         private int GetRowValue()

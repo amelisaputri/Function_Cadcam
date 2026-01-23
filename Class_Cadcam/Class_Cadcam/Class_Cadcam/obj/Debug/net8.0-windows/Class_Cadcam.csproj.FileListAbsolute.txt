@@ -15,4 +15,4 @@ D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Ca
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Cadcam.genruntimeconfig.cache
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\ref\Class_Cadcam.dll
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Cadcam.Program_Cadcam.resources
-D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Cadcam.UC_DataGrid.resources
+D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Cadcam.uc_DataGrid1.resources
