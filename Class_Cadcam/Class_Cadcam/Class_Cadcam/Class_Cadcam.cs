@@ -17,7 +17,8 @@
             dataGrid = new uc_DataGrid1(); // ✅ isi FIELD
 
             // Biar penuh di kolom
-            dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
+            //dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
+            dataGrid.Dock = DockStyle.Fill;
 
             // (opsional) hapus margin agar rapih
             dataGrid.Margin = new Padding(0);
@@ -25,15 +26,48 @@
             // 🔥 INI KUNCI SPAN COL
             tlp_DataGrid.SetColumnSpan(dataGrid, 3);
 
+            dataGrid.CellPositionChanged += DataGrid_CellPositionChanged;
+
             // Tambahkan ke:
             // Column = 0
             // Row    = 1  
             tlp_DataGrid.Controls.Add(dataGrid, 0, 2);
+
         }
 
         //// ===============================
-        //// ENTER DI ROW
+        //// BAGIAN PILIH ROW DAN COL
+        //// ===============================
+
+        private void DataGrid_CellPositionChanged(int row, int col)
+        {
+            textNumRow.Text = row.ToString();
+            textNumCol.Text = col.ToString();
+        }
+
+        private void txtKolomKe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!int.TryParse(textNumRow.Text, out int row) ||
+                    !int.TryParse(textNumCol.Text, out int col))
+                {
+                    MessageBox.Show("Baris dan Kolom harus berupa angka");
+                    return;
+                }
+
+                dataGrid.SelectCell(row, col);
+
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        //// ===============================
         
+
+        //// ===============================
+        //// ENTER DI ROW
+
         private void txtRow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter &&

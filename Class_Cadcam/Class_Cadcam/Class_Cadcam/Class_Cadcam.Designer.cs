@@ -34,7 +34,6 @@
             Lb_Row = new Label();
             textNumRow = new TextBox();
             textSumRow = new TextBox();
-            textBoxRow = new TextBox();
             Lb_Column = new Label();
             textNumCol = new TextBox();
             textSumCol = new TextBox();
@@ -87,7 +86,6 @@
             tlpRowCol.Controls.Add(Lb_Row, 0, 0);
             tlpRowCol.Controls.Add(textNumRow, 0, 1);
             tlpRowCol.Controls.Add(textSumRow, 1, 0);
-            tlpRowCol.Controls.Add(textBoxRow, 1, 1);
             tlpRowCol.Controls.Add(Lb_Column, 2, 0);
             tlpRowCol.Controls.Add(textNumCol, 2, 1);
             tlpRowCol.Controls.Add(textSumCol, 3, 0);
@@ -118,6 +116,7 @@
             textNumRow.Name = "textNumRow";
             textNumRow.Size = new Size(138, 23);
             textNumRow.TabIndex = 1;
+            textNumRow.Text = "Baris ke ";
             // 
             // textSumRow
             // 
@@ -128,14 +127,6 @@
             textSumRow.TabIndex = 2;
             textSumRow.Text = "5";
             textSumRow.KeyDown += txtRow_KeyDown;
-            // 
-            // textBoxRow
-            // 
-            textBoxRow.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxRow.Location = new Point(147, 34);
-            textBoxRow.Name = "textBoxRow";
-            textBoxRow.Size = new Size(138, 23);
-            textBoxRow.TabIndex = 3;
             // 
             // Lb_Column
             // 
@@ -155,6 +146,8 @@
             textNumCol.Name = "textNumCol";
             textNumCol.Size = new Size(138, 23);
             textNumCol.TabIndex = 5;
+            textNumCol.Text = "Kolom Ke";
+            textNumCol.KeyDown += txtKolomKe_KeyDown;
             // 
             // textSumCol
             // 
@@ -224,7 +217,6 @@
         private Label Lb_Row;
         private TextBox textNumRow;
         private TextBox textSumRow;
-        private TextBox textBoxRow;
         private Label Lb_Column;
         private TextBox textNumCol;
         private TextBox textSumCol;

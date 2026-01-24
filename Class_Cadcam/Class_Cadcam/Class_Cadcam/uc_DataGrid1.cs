@@ -16,9 +16,13 @@ namespace Class_Cadcam
         {
             InitializeComponent();
             InitGrid();
+
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
         }
 
         public int MaxColumn => dataGridView1.Columns.Count;
+        public event Action<int, int> CellPositionChanged;
+
 
         private void InitGrid()
         {
@@ -51,6 +55,37 @@ namespace Class_Cadcam
                 dataGridView1.Columns[i].Visible = i < totalColumn;
         }
 
-       
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell == null)
+                return;
+
+            int row = dataGridView1.CurrentCell.RowIndex + 1;
+            int col = dataGridView1.CurrentCell.ColumnIndex + 1;
+
+            CellPositionChanged?.Invoke(row, col);
+        }
+
+        public void SelectCell(int row, int col)
+        {
+            // ubah dari user (1-based) ke grid (0-based)
+            int r = row - 1;
+            int c = col - 1;
+
+            // validasi batas
+            if (r < 0 || r >= dataGridView1.Rows.Count)
+                return;
+
+            if (c < 0 || c >= dataGridView1.Columns.Count)
+                return;
+
+            if (!dataGridView1.Columns[c].Visible)
+                return;
+
+            dataGridView1.CurrentCell = dataGridView1.Rows[r].Cells[c];
+            dataGridView1.BeginEdit(true); // langsung bisa ngetik
+        }
+
+
     }
 }
