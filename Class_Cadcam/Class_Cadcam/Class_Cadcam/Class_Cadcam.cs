@@ -41,30 +41,39 @@
 
         private void DataGrid_CellPositionChanged(int row, int col)
         {
-            textNumRow.Text = row.ToString();
-            textNumCol.Text = col.ToString();
+            
+            string colLetter = ColumnIndexToLetter(col);
+            string address = $"{colLetter}{row}";
+
+            textNumRow.Text = address;
+            textNumCol.Text = address;
         }
+
+        private string ColumnIndexToLetter(int col)
+        {
+            string result = "";
+            while (col > 0)
+            {
+                col--;
+                result = (char)('A' + (col % 26)) + result;
+                col /= 26;
+            }
+            return result;
+        }
+
 
         private void txtKolomKe_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!int.TryParse(textNumRow.Text, out int row) ||
-                    !int.TryParse(textNumCol.Text, out int col))
-                {
-                    MessageBox.Show("Baris dan Kolom harus berupa angka");
-                    return;
-                }
-
-                dataGrid.SelectCell(row, col);
+                dataGrid.SelectCellByAddress(textNumCol.Text);
 
                 e.SuppressKeyPress = true;
             }
+
         }
 
         //// ===============================
-        
-
         //// ===============================
         //// ENTER DI ROW
 
@@ -104,6 +113,24 @@
 
         //// ENTER DI ROW
         //// ===============================
+
+
+        // Pengisian Kolom dan baris yang telah dipilih
+        private void textIsiCell_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGrid.SetValueToCurrentCell(textBoxCol.Text);
+
+                // opsional: kosongkan textbox
+                textBoxCol.Clear();
+
+                // opsional: fokus balik ke grid
+                dataGrid.Focus();
+
+                e.SuppressKeyPress = true;
+            }
+        }
 
     }
 

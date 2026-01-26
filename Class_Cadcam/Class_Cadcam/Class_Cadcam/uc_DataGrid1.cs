@@ -27,10 +27,18 @@ namespace Class_Cadcam
         private void InitGrid()
         {
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.AutoSizeColumnsMode =
-                DataGridViewAutoSizeColumnsMode.ColumnHeader;
+
+            // JANGAN ColumnHeader
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
             dataGridView1.DefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleCenter;
+
+            // Autosize PER KOLOM (bukan global)
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
         }
 
         // ===============================
@@ -68,24 +76,80 @@ namespace Class_Cadcam
 
         public void SelectCell(int row, int col)
         {
-            // ubah dari user (1-based) ke grid (0-based)
             int r = row - 1;
             int c = col - 1;
 
-            // validasi batas
             if (r < 0 || r >= dataGridView1.Rows.Count)
                 return;
-
             if (c < 0 || c >= dataGridView1.Columns.Count)
                 return;
-
             if (!dataGridView1.Columns[c].Visible)
                 return;
 
             dataGridView1.CurrentCell = dataGridView1.Rows[r].Cells[c];
-            dataGridView1.BeginEdit(true); // langsung bisa ngetik
+            dataGridView1.Focus();   // 🔥 WAJIB
+            dataGridView1.BeginEdit(true);
+
+            // 🔥 TRIGGER EVENT MANUAL
+            CellPositionChanged?.Invoke(row, col);
         }
 
+        private int ColumnLetterToIndex(string column)
+        {
+            int result = 0;
+
+            foreach (char c in column)
+            {
+                result *= 26;
+                result += (c - 'A' + 1);
+            }
+
+            return result - 1; // zero-based
+        }
+
+
+        // DIPAKAI OLEH FORM (textNumRow & textNumCol)
+        public void SelectCellByAddress(string address)
+        {
+            if (string.IsNullOrWhiteSpace(address))
+                return;
+
+            address = address.Trim().ToUpper();
+
+            int i = 0;
+            while (i < address.Length && char.IsLetter(address[i]))
+                i++;
+
+            if (i == 0 || i == address.Length)
+                return;
+
+            string colPart = address.Substring(0, i);
+            string rowPart = address.Substring(i);
+
+            if (!int.TryParse(rowPart, out int row))
+                return;
+
+            int col = ColumnLetterToIndex(colPart);
+
+            SelectCell(row, col + 1);
+        }
+
+        // Isi Value Kolom dan Baris yang di Pilih
+        public void SetValueToCurrentCell(string value)
+        {
+            if (dataGridView1.CurrentCell == null)
+                return;
+
+            dataGridView1.CurrentCell.Value = value;
+
+            int col = dataGridView1.CurrentCell.ColumnIndex;
+
+            // 🔥 resize kolom aktif
+            dataGridView1.AutoResizeColumn(
+                col,
+                DataGridViewAutoSizeColumnMode.AllCells
+            );
+        }
 
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Class_Cadcam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46d827cb554ada12a64c298694955fcd872c7cc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9456dfab49b31d0871849f57baf922d20809ab7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Class_Cadcam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Class_Cadcam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

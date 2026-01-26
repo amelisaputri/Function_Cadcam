@@ -1,0 +1,61 @@
+ Kolom      | Tipe     
+ ---------- | -------- 
+ SERIAL NUM | string   
+ PO-DATE    | DateTime 
+ O-ETC      | DateTime 
+ DELIVERY   | Boolean  
+ R-ETC      | DateTime 
+ STAGE      | string   
+ MOLD CODE  | string   
+ SEASON     | string   
+ MODEL      | string   
+ PART       | string   
+ MOLD-TYPE  | string    
+ O_MOLD-P   | Integer
+ PICTURE    | FILE PATH
+ DISCOUNT   | string   
+ MOLD-P     | Integer   
+ STEP       | string   
+ MOLD SIZE  | string   
+ MOLD-ID    | string
+ 2D         | string
+ 3D         | string
+ C_WOOD1    | string
+ C_WOOD2    | string
+ C_WOOD3    | string
+ C_TOPPLATE1| string
+ C_TOPPLATE2| string
+ C_BOTPLATE1| string
+ C_BOTPLATE2| string
+ C_MIDPLATE1| string
+ C_MIDPLATE2| string
+ C_CORE1    | string
+ C_CORE2    | string
+ C_CORE3    | string
+ C_CORE4    | string
+ C_CORE5    | string
+ WOOD1      | string
+ WOOD2      | string
+ WOOD3      | string
+ WOOD4      | string
+ SILICON1   | string
+ SILICON2   | string
+ CERAMIC1   | string
+ CERAMIC2   | string
+ MELTING1   | string
+ MELTING2   | string
+ MILLING1   | string
+ MILLING2   | string
+ SCAN1      | string
+ SCAN2      | string
+ REVERSE1   | string
+ REVERSE2   | string
+ TOPPLATE1  | string
+ TOPPLATE2  | string
+
+
+
+
+
+
+
