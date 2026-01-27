@@ -1,57 +1,85 @@
  Kolom      | Tipe     
  ---------- | -------- 
- SERIAL NUM | string   
- PO-DATE    | DateTime 
- O-ETC      | DateTime 
- DELIVERY   | Boolean  
- R-ETC      | DateTime 
- STAGE      | string   
- MOLD CODE  | string   
- SEASON     | string   
- MODEL      | string   
- PART       | string   
- MOLD-TYPE  | string    
- O_MOLD-P   | Integer
+ SERIAL NUM | string     (10)
+ PO-DATE    | DateTime 	 (10)	
+ O-ETC      | DateTime 	 (10) 
+ DELIVERY   | Boolean    
+ R-ETC      | DateTime   (10)
+ STAGE      | string     (10)
+ MOLD CODE  | string     (10)   
+ SEASON     | string     (4)   
+ MODEL      | string     (50)   
+ PART       | string     (15)   
+ MOLD-TYPE  | string     (7)    
+ O_MOLD-P   | Integer    (25)
  PICTURE    | FILE PATH
- DISCOUNT   | string   
- MOLD-P     | Integer   
- STEP       | string   
- MOLD SIZE  | string   
- MOLD-ID    | string
- 2D         | string
- 3D         | string
- C_WOOD1    | string
- C_WOOD2    | string
- C_WOOD3    | string
- C_TOPPLATE1| string
- C_TOPPLATE2| string
- C_BOTPLATE1| string
- C_BOTPLATE2| string
- C_MIDPLATE1| string
- C_MIDPLATE2| string
- C_CORE1    | string
- C_CORE2    | string
- C_CORE3    | string
- C_CORE4    | string
- C_CORE5    | string
- WOOD1      | string
- WOOD2      | string
- WOOD3      | string
- WOOD4      | string
- SILICON1   | string
- SILICON2   | string
- CERAMIC1   | string
- CERAMIC2   | string
- MELTING1   | string
- MELTING2   | string
- MILLING1   | string
- MILLING2   | string
- SCAN1      | string
- SCAN2      | string
- REVERSE1   | string
- REVERSE2   | string
- TOPPLATE1  | string
- TOPPLATE2  | string
+ DISCOUNT   | string     (%)   
+ MOLD-P     | Integer    (25)   
+ STEP       | string     (5)      
+ MOLD SIZE  | string     (10)   
+ MOLD-ID    | string     (10)
+ 2D         | string     (30)
+ 3D         | string     (30)
+ C_WOOD1    | string     (55)
+ C_WOOD2    | string     (55)
+ C_WOOD3    | string     (55)
+ C_TOPPLATE1| string     (55)
+ C_TOPPLATE2| string     (55)
+ C_BOTPLATE1| string     (55)
+ C_BOTPLATE2| string     (55)
+ C_MIDPLATE1| string     (55)
+ C_MIDPLATE2| string     (55)
+ C_CORE1    | string     (55)
+ C_CORE2    | string     (55)
+ C_CORE3    | string     (55)
+ C_CORE4    | string     (55)
+ C_CORE5    | string     (55)
+ WOOD1      | string     (30)
+ WOOD2      | string     (30)
+ WOOD3      | string     (30)
+ WOOD4      | string     (30)
+ SILICON1   | string     (35)
+ SILICON2   | string     (35)
+ CERAMIC1   | string     (35)
+ CERAMIC2   | string     (35)
+ MELTING1   | string     (35)
+ MELTING2   | string     (35)
+ MILLING1   | string     (30)
+ MILLING2   | string     (30)
+ SCAN1      | string     (30)
+ SCAN2      | string     (30)
+ REVERSE1   | string     (30)
+ REVERSE2   | string     (30)
+ TOPPLATE1  | string     (30)
+ TOPPLATE2  | string     (30)
+ BOTPLATE1  | string     (30)
+ BOTPLATE2  | string     (30)
+ MIDPLATE1  | string     (30)
+ MIDPLATE2  | string     (30)
+ CORE1      | string     (30)
+ CORE2      | string     (30)
+ CORE3      | string     (30)
+ CORE4      | string     (30)
+ CORE5      | string     (30)
+ C_TOPPLATE1_CNC| string     (30)
+ C_TOPPLATE2_CNC| string     (30)
+ C_BOTPLATE1_CNC| string     (30)
+ C_BOTPLATE2_CNC| string     (30)
+ C_MIDPLATE1_CNC| string     (30)
+ C_MIDPLATE2_CNC| string     (30)
+ C_CORE1_CNC    | string     (30)
+ C_CORE2_CNC    | string     (30)
+ C_CORE3_CNC    | string     (30)
+ C_CORE4_CNC    | string     (30)
+ C_CORE5_CNC    | string     (30)
+ VSM            | string     (30)
+ VSM-L1         | string     (5)
+ TEST           | string     (30)
+ TEXTER         | string     (30)
+ COTTING        | string     (30)
+ AIRHOLE        | string     (30)
+ DATA1          | string     (200)
+
 
 
 

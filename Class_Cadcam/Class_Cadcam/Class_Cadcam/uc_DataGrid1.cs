@@ -23,6 +23,10 @@ namespace Class_Cadcam
         public int MaxColumn => dataGridView1.Columns.Count;
         public event Action<int, int> CellPositionChanged;
 
+        public DataGridView Grid
+        {
+            get { return dataGridView1; }
+        }
 
         private void InitGrid()
         {
@@ -47,9 +51,27 @@ namespace Class_Cadcam
 
         public void SetRow(int totalRow)
         {
-            dataGridView1.Rows.Clear();
-            if (totalRow > 0)
-                dataGridView1.Rows.Add(totalRow);
+            //dataGridView1.Rows.Clear();
+            //if (totalRow > 0)
+            //    dataGridView1.Rows.Add(totalRow);
+  
+            var dt = dataGridView1.DataSource as DataTable;
+            if (dt == null) return;
+
+            int diff = totalRow - dt.Rows.Count;
+
+            if (diff > 0)
+            {
+                for (int i = 0; i < diff; i++)
+                    dt.Rows.Add(dt.NewRow());
+            }
+            else if (diff < 0)
+            {
+                for (int i = 0; i < Math.Abs(diff); i++)
+                    dt.Rows.RemoveAt(dt.Rows.Count - 1);
+          
+            }
+
         }
 
         public void SetColumn(int totalColumn)
