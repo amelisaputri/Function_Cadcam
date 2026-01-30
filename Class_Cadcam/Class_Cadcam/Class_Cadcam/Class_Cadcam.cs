@@ -86,7 +86,6 @@ namespace Class_Cadcam
         }
 
         //// ===============================
-        //// ===============================
         //// ENTER DI ROW
 
         private void txtRow_KeyDown(object sender, KeyEventArgs e)
@@ -177,7 +176,94 @@ namespace Class_Cadcam
         }
 
 
+        //// ===============================
+        //// BAGIAN Button SAVE
+        //// ===============================
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dataGrid.Grid.DataSource as DataTable;
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Tidak ada data untuk disimpan");
+                return;
+            }
+
+            string[] requiredColumns = { "SERIAL_NUM" };
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlTransaction trans = conn.BeginTransaction();
+
+                try
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        // 🔹 Skip baris kosong total
+                        bool emptyRow = true;
+                        foreach (DataColumn col in dt.Columns)
+                        {
+                            if (row[col] != DBNull.Value &&
+                                !string.IsNullOrWhiteSpace(row[col].ToString()))
+                            {
+                                emptyRow = false;
+                                break;
+                            }
+                        }
+                        if (emptyRow) continue;
+
+                        // 🔹 Validasi kolom WAJIB
+                        foreach (string colName in requiredColumns)
+                        {
+                            if (row[colName] == DBNull.Value ||
+                                string.IsNullOrWhiteSpace(row[colName].ToString()))
+                            {
+                                int r = dt.Rows.IndexOf(row);
+                                int c = dt.Columns[colName].Ordinal;
+
+                                dataGrid.Grid.CurrentCell =
+                                    dataGrid.Grid.Rows[r].Cells[c];
+                                dataGrid.Grid.BeginEdit(true);
+
+                                MessageBox.Show(
+                                    $"Kolom {colName} wajib diisi",
+                                    "Validasi",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                                trans.Rollback();
+                                return;
+                            }
+                        }
+
+                        // 🔹 INSERT (contoh kolom utama saja)
+                        SqlCommand cmd = new SqlCommand(@"
+                        INSERT INTO MASTER_MOLD
+                        (SERIAL_NUM, PO_DATE, O_ETC, DELIVERY, R_ETC, STAGE )
+                        VALUES
+                        (@SERIAL_NUM, @PO_DATE, @O_ETC, @DELIVERY, @R_ETC, @STAGE)",
+                            conn, trans);
+
+                        cmd.Parameters.AddWithValue("@SERIAL_NUM", row["SERIAL_NUM"]);
+                        cmd.Parameters.AddWithValue("@PO_DATE", row["PO_DATE"] ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@O_ETC", row["O_ETC"] ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DELIVERY", row["DELIVERY"] ?? false);
+                        cmd.Parameters.AddWithValue("@R_ETC", row["R_ETC"] ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@STAGE", row["STAGE"] ?? DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    trans.Commit();
+                    MessageBox.Show("Data berhasil disimpan");
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    MessageBox.Show("Gagal menyimpan data:\n" + ex.Message);
+                }
+            }
+        }
 
     }
 

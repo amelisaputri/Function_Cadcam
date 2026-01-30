@@ -32,8 +32,7 @@
             panel_title = new Panel();
             Lb_title = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox1 = new TextBox();
-            Lb_Rename = new Label();
+            btn_save = new Button();
             tlpRowCol = new TableLayoutPanel();
             Lb_Row = new Label();
             Lb_Column = new Label();
@@ -95,8 +94,7 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.2160282F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.78397F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
-            tableLayoutPanel1.Controls.Add(Lb_Rename, 0, 0);
+            tableLayoutPanel1.Controls.Add(btn_save, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(409, 54);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -106,24 +104,17 @@
             tableLayoutPanel1.Size = new Size(596, 68);
             tableLayoutPanel1.TabIndex = 4;
             // 
-            // textBox1
+            // btn_save
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(3, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(138, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // Lb_Rename
-            // 
-            Lb_Rename.Anchor = AnchorStyles.Left;
-            Lb_Rename.AutoSize = true;
-            Lb_Rename.Font = new Font("Pretendard SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Lb_Rename.Location = new Point(3, 9);
-            Lb_Rename.Name = "Lb_Rename";
-            Lb_Rename.Size = new Size(101, 15);
-            Lb_Rename.TabIndex = 0;
-            Lb_Rename.Text = "Rename Header";
+            btn_save.Anchor = AnchorStyles.Right;
+            btn_save.Font = new Font("Pretendard SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_save.Location = new Point(518, 39);
+            btn_save.Name = "btn_save";
+            btn_save.Size = new Size(75, 23);
+            btn_save.TabIndex = 0;
+            btn_save.Text = "Save";
+            btn_save.UseVisualStyleBackColor = true;
+            btn_save.Click += btnSave_Click;
             // 
             // tlpRowCol
             // 
@@ -233,7 +224,6 @@
             panel_title.ResumeLayout(false);
             panel_title.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             tlpRowCol.ResumeLayout(false);
             tlpRowCol.PerformLayout();
             ResumeLayout(false);
@@ -245,8 +235,6 @@
         private Label Lb_title;
         private Panel panel_title;
         private TableLayoutPanel tableLayoutPanel1;
-        private Label Lb_Rename;
-        private TextBox textBox1;
         private TableLayoutPanel tlpRowCol;
         private Label Lb_Row;
         private TextBox textNumRow;
@@ -255,5 +243,6 @@
         private TextBox textNumCol;
         private TextBox textSumCol;
         private TextBox textBoxCol;
+        private Button btn_save;
     }
 }

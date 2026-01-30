@@ -84,6 +84,112 @@
 
 
 
+CREATE TABLE MASTER_MOLD (
+    SERIAL_NUM        VARCHAR(10)  PRIMARY KEY,
+
+    PO_DATE           DATETIME,
+    O_ETC             DATETIME,
+    DELIVERY          VARCHAR(10),
+    R_ETC             DATETIME,
+
+    STAGE             VARCHAR(10),
+    MOLD_CODE         VARCHAR(10),
+    SEASON            VARCHAR(4),
+    MODEL             VARCHAR(50),
+    PART              VARCHAR(15),
+    MOLD_TYPE         VARCHAR(7),
+
+    O_MOLD_P          INT,
+    PICTURE_PATH      VARCHAR(255),
+
+    DISCOUNT          DECIMAL(5,2),
+    MOLD_P            INT,
+
+    STEP              VARCHAR(5),
+    MOLD_SIZE         VARCHAR(10),
+    MOLD_ID           VARCHAR(10),
+
+    FILE_2D           VARCHAR(30),
+    FILE_3D           VARCHAR(30),
+
+    C_WOOD1           VARCHAR(55),
+    C_WOOD2           VARCHAR(55),
+    C_WOOD3           VARCHAR(55),
+
+    C_TOPPLATE1       VARCHAR(55),
+    C_TOPPLATE2       VARCHAR(55),
+    C_BOTPLATE1       VARCHAR(55),
+    C_BOTPLATE2       VARCHAR(55),
+    C_MIDPLATE1       VARCHAR(55),
+    C_MIDPLATE2       VARCHAR(55),
+
+    C_CORE1           VARCHAR(55),
+    C_CORE2           VARCHAR(55),
+    C_CORE3           VARCHAR(55),
+    C_CORE4           VARCHAR(55),
+    C_CORE5           VARCHAR(55),
+
+    WOOD1             VARCHAR(30),
+    WOOD2             VARCHAR(30),
+    WOOD3             VARCHAR(30),
+    WOOD4             VARCHAR(30),
+
+    SILICON1          VARCHAR(35),
+    SILICON2          VARCHAR(35),
+    CERAMIC1          VARCHAR(35),
+    CERAMIC2          VARCHAR(35),
+
+    MELTING1          VARCHAR(35),
+    MELTING2          VARCHAR(35),
+
+    MILLING1          VARCHAR(30),
+    MILLING2          VARCHAR(30),
+
+    SCAN1             VARCHAR(30),
+    SCAN2             VARCHAR(30),
+
+    REVERSE1          VARCHAR(30),
+    REVERSE2          VARCHAR(30),
+
+    TOPPLATE1         VARCHAR(30),
+    TOPPLATE2         VARCHAR(30),
+    BOTPLATE1         VARCHAR(30),
+    BOTPLATE2         VARCHAR(30),
+    MIDPLATE1         VARCHAR(30),
+    MIDPLATE2         VARCHAR(30),
+
+    CORE1             VARCHAR(30),
+    CORE2             VARCHAR(30),
+    CORE3             VARCHAR(30),
+    CORE4             VARCHAR(30),
+    CORE5             VARCHAR(30),
+
+    C_TOPPLATE1_CNC   VARCHAR(30),
+    C_TOPPLATE2_CNC   VARCHAR(30),
+    C_BOTPLATE1_CNC   VARCHAR(30),
+    C_BOTPLATE2_CNC   VARCHAR(30),
+    C_MIDPLATE1_CNC   VARCHAR(30),
+    C_MIDPLATE2_CNC   VARCHAR(30),
+
+    C_CORE1_CNC       VARCHAR(30),
+    C_CORE2_CNC       VARCHAR(30),
+    C_CORE3_CNC       VARCHAR(30),
+    C_CORE4_CNC       VARCHAR(30),
+    C_CORE5_CNC       VARCHAR(30),
+
+    VSM               VARCHAR(30),
+    VSM_L1            VARCHAR(5),
+
+    TEST              VARCHAR(30),
+    TEXTER            VARCHAR(30),
+    COTTING           VARCHAR(30),
+    AIRHOLE           VARCHAR(30),
+
+    DATA1             VARCHAR(200),
+
+    CREATED_DATE      DATETIME DEFAULT GETDATE()
+    TAMBAHKAN UPDATE
+);
 
 
 
