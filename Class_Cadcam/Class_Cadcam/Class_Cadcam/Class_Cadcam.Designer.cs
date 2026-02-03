@@ -33,6 +33,7 @@
             Lb_title = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             btn_save = new Button();
+            btn_Import = new Button();
             tlpRowCol = new TableLayoutPanel();
             Lb_Row = new Label();
             Lb_Column = new Label();
@@ -95,6 +96,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.2160282F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75.78397F));
             tableLayoutPanel1.Controls.Add(btn_save, 1, 1);
+            tableLayoutPanel1.Controls.Add(btn_Import, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(409, 54);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,6 +117,18 @@
             btn_save.Text = "Save";
             btn_save.UseVisualStyleBackColor = true;
             btn_save.Click += btnSave_Click;
+            // 
+            // btn_Import
+            // 
+            btn_Import.Anchor = AnchorStyles.Left;
+            btn_Import.Font = new Font("Pretendard SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Import.Location = new Point(3, 39);
+            btn_Import.Name = "btn_Import";
+            btn_Import.Size = new Size(75, 23);
+            btn_Import.TabIndex = 1;
+            btn_Import.Text = "Import Excel";
+            btn_Import.UseVisualStyleBackColor = true;
+            btn_Import.Click += btn_Import_Click;
             // 
             // tlpRowCol
             // 
@@ -244,5 +258,6 @@
         private TextBox textSumCol;
         private TextBox textBoxCol;
         private Button btn_save;
+        private Button btn_Import;
     }
 }

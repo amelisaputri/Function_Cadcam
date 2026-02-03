@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mgNST/pyOTI=",
+  "dgSpecHash": "fhYdW0VeC0o=",
   "success": true,
   "projectFilePath": "D:\\CADCAM AMEL\\PROGRAM CADCAM\\Function_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam\\Class_Cadcam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
+    "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\exceldatareader\\3.8.0\\exceldatareader.3.8.0.nupkg.sha512",
+    "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\exceldatareader.dataset\\3.8.0\\exceldatareader.dataset.3.8.0.nupkg.sha512",
     "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\microsoft.data.sqlclient\\6.1.4\\microsoft.data.sqlclient.6.1.4.nupkg.sha512",
     "C:\\Users\\cadcam.amelisa\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\6.0.2\\microsoft.data.sqlclient.sni.runtime.6.0.2.nupkg.sha512",

@@ -97,10 +97,11 @@ CREATE TABLE MASTER_MOLD (
     SEASON            VARCHAR(4),
     MODEL             VARCHAR(50),
     PART              VARCHAR(15),
-    MOLD_TYPE         VARCHAR(7),
+    SUR_PART          VARCHAR(15),
+    MOLD_TYPE         VARCHAR(10),
 
     O_MOLD_P          INT,
-    PICTURE_PATH      VARCHAR(255),
+    PICTURE           VARCHAR(100),
 
     DISCOUNT          DECIMAL(5,2),
     MOLD_P            INT,
@@ -129,10 +130,10 @@ CREATE TABLE MASTER_MOLD (
     C_CORE4           VARCHAR(55),
     C_CORE5           VARCHAR(55),
 
-    WOOD1             VARCHAR(30),
-    WOOD2             VARCHAR(30),
-    WOOD3             VARCHAR(30),
-    WOOD4             VARCHAR(30),
+    RENSHAPE1         VARCHAR(30),
+    RENSHAPE2         VARCHAR(30),	
+    RENSHAPE3         VARCHAR(30),
+    RENSHAPE4         VARCHAR(30),
 
     SILICON1          VARCHAR(35),
     SILICON2          VARCHAR(35),
@@ -185,10 +186,10 @@ CREATE TABLE MASTER_MOLD (
     COTTING           VARCHAR(30),
     AIRHOLE           VARCHAR(30),
 
-    DATA1             VARCHAR(200),
+    DATA1             VARCHAR(100),
 
     CREATED_DATE      DATETIME DEFAULT GETDATE()
-    TAMBAHKAN UPDATE
+    
 );
 
 

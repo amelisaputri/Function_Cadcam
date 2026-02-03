@@ -1,7 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
-
+using ExcelDataReader;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace Class_Cadcam
 {
@@ -32,6 +35,25 @@ namespace Class_Cadcam
             //dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
             dataGrid.Dock = DockStyle.Fill;
 
+            // ambil DataGridView dari UserControl
+            var dgv = dataGrid.Grid;
+
+            // HEADER
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+
+            // CELL
+            dgv.DefaultCellStyle.BackColor = Color.Black;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.ForeColor = Color.White;
+
+            //Mengikuti ukuran isi cell kolom
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
             // (opsional) hapus margin agar rapih
             dataGrid.Margin = new Padding(0);
 
@@ -53,7 +75,7 @@ namespace Class_Cadcam
 
         private void DataGrid_CellPositionChanged(int row, int col)
         {
-            
+
             string colLetter = ColumnIndexToLetter(col);
             string address = $"{colLetter}{row}";
 
@@ -264,6 +286,222 @@ namespace Class_Cadcam
                 }
             }
         }
+
+        //// ===============================
+        //// BAGIAN Button IMPORT
+        //// ===============================  
+
+        private HashSet<string> GetDbColumns(SqlConnection conn)
+        {
+            HashSet<string> cols = new HashSet<string>();
+
+            using (SqlCommand cmd = new SqlCommand(
+                @"SELECT COLUMN_NAME 
+          FROM INFORMATION_SCHEMA.COLUMNS
+          WHERE TABLE_NAME = 'MASTER_MOLD'", conn))
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                while (rdr.Read())
+                    cols.Add(rdr.GetString(0).ToUpper());
+            }
+
+            return cols;
+        }
+
+        private List<string> GetInvalidColumns(DataTable dt, HashSet<string> dbCols)
+        {
+            return dt.Columns
+                .Cast<DataColumn>()
+                .Where(c => !dbCols.Contains(c.ColumnName))
+                .Select(c => c.ColumnName)
+                .ToList();
+        }
+
+
+        private string NormalizeColumn(string col)
+        {
+            string c = col.Trim().ToUpper();
+
+            // umum
+            c = c.Replace("-", "_")
+                 .Replace(" ", "_");
+
+            // 🔥 Excel → Database
+            if (c == "2D")
+                return "_2D";
+
+            if (c == "3D")
+                return "_3D";
+
+            // 🔥 duplikat Excel (_1) → CNC
+            if (c.EndsWith("_1"))
+                c = c.Replace("_1", "_CNC");
+
+            return c;
+        }
+
+
+        private void btn_Import_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Excel Files|*.xlsx;*.xls";
+
+            if (ofd.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                // 1. Baca Excel
+                DataTable dt = ReadExcel(ofd.FileName);
+
+                // 🔥 WAJIB sebelum ImportToDatabase
+                FixExcelDateColumns(dt, "PO_DATE", "O_ETC", "R_ETC");
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("File Excel kosong");
+                    return;
+                }
+
+                // OPTIONAL preview
+                // dgvPreview.DataSource = dt;
+
+                // 2. Import ke Database
+                ImportToDatabase(dt);
+
+                MessageBox.Show("Import Excel ke Master_Mold berhasil 👍");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal import:\n" + ex.Message);
+            }
+        }
+
+        private DataTable ReadExcel(string path)
+        {
+            System.Text.Encoding.RegisterProvider(
+                System.Text.CodePagesEncodingProvider.Instance);
+
+            using (var stream = File.Open(
+                path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var reader = ExcelReaderFactory.CreateReader(stream))
+            {
+                var conf = new ExcelDataSetConfiguration()
+                {
+                    ConfigureDataTable = _ => new ExcelDataTableConfiguration()
+                    {
+                        UseHeaderRow = true
+                    }
+                };
+
+                DataTable dt = reader.AsDataSet(conf).Tables[0];
+
+                Dictionary<string, int> colCounter = new Dictionary<string, int>();
+
+                foreach (DataColumn col in dt.Columns)
+                {
+                    string newName = NormalizeColumn(col.ColumnName);
+
+                    // 🔁 HANDLE DUPLIKAT → TAMBAH _CNC
+                    if (colCounter.ContainsKey(newName))
+                    {
+                        colCounter[newName]++;
+                        newName = newName + "_CNC";
+                    }
+                    else
+                    {
+                        colCounter[newName] = 1;
+                    }
+
+                    col.ColumnName = newName; // 🔥 INI WAJIB
+                }
+
+                return dt;
+            }
+        }
+
+        private void ImportToDatabase(DataTable dt)
+        {
+            using (SqlConnection conn = new SqlConnection(
+                "Server=10.10.92.107;Database=CSTI_CADCAM;User ID=sa;Password=changshin2025!;TrustServerCertificate=True;"))
+            {
+                conn.Open();
+
+                HashSet<string> dbCols = GetDbColumns(conn);
+                List<string> invalidCols = GetInvalidColumns(dt, dbCols);
+
+                // 🔔 TAMPILKAN KOLOM SALAH (INI YANG KAMU MAU)
+                if (invalidCols.Count > 0)
+                {
+                    MessageBox.Show(
+                        "Kolom berikut TIDAK ADA di database dan akan diisi NULL:\n\n" +
+                        string.Join(", ", invalidCols),
+                        "Info Kolom Tidak Valid",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+
+                using (SqlBulkCopy bulk = new SqlBulkCopy(conn))
+                {
+                    bulk.DestinationTableName = "MASTER_MOLD";
+
+                    foreach (DataColumn col in dt.Columns)
+                    {
+                        if (dbCols.Contains(col.ColumnName))
+                        {
+                            bulk.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                        }
+                        // ❌ kolom invalid TIDAK dikirim → DB isi NULL
+                    }
+
+                    bulk.WriteToServer(dt);
+                }
+            }
+        }
+
+        private void FixExcelDateColumns(DataTable dt, params string[] dateColumns)
+        {
+            foreach (string col in dateColumns)
+            {
+                if (!dt.Columns.Contains(col)) continue;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[col] == DBNull.Value) continue;
+
+                    // Excel serial date (Double)
+                    if (row[col] is double d)
+                    {
+                        // 0 atau invalid → NULL
+                        if (d <= 0)
+                        {
+                            row[col] = DBNull.Value;
+                        }
+                        else
+                        {
+                            row[col] = DateTime.FromOADate(d);
+                        }
+                    }
+
+                    // String tanggal (opsional)
+                    else if (row[col] is string s && !string.IsNullOrWhiteSpace(s))
+                    {
+                        if (DateTime.TryParse(s, out DateTime parsed))
+                        {
+                            row[col] = parsed;
+                        }
+                        else
+                        {
+                            row[col] = DBNull.Value;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
 
     }
 

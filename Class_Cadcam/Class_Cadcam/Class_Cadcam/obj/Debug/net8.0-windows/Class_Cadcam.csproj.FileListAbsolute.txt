@@ -63,3 +63,5 @@ D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Ca
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Cadcam.csproj.AssemblyReference.cache
 D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\obj\Debug\net8.0-windows\Class_Ca.483C5969.Up2Date
+D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\bin\Debug\net8.0-windows\ExcelDataReader.dll
+D:\CADCAM AMEL\PROGRAM CADCAM\Function_Cadcam\Class_Cadcam\Class_Cadcam\Class_Cadcam\bin\Debug\net8.0-windows\ExcelDataReader.DataSet.dll
